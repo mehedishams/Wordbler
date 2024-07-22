@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BC6EAEDA-96D5-4FE2-980E-1FAE7A33C997}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Wordbler</RootNamespace>
+    <AssemblyName>Wordbler</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\BlankTileOnBoard.cs" />
+    <Compile Include="Classes\BoardCell.cs" />
+    <Compile Include="Classes\Globals.cs" />
+    <Compile Include="Classes\Letter.cs" />
+    <Compile Include="Classes\GameEngine.cs" />
+    <Compile Include="Classes\PlayerDetails.cs" />
+    <Compile Include="Classes\RackCell.cs" />
+    <Compile Include="Classes\IndividualScore.cs" />
+    <Compile Include="Classes\TurnsWithScores.cs" />
+    <Compile Include="Classes\ValidWordWithScore.cs" />
+    <Compile Include="Classes\WindowScaler.cs" />
+    <Compile Include="DisplayScoreDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DisplayScoreDetails.Designer.cs">
+      <DependentUpon>DisplayScoreDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="WildCardChooser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WildCardChooser.Designer.cs">
+      <DependentUpon>WildCardChooser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\IBoardCell.cs" />
+    <Compile Include="Interfaces\IRackCell.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Wordbler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wordbler.Designer.cs">
+      <DependentUpon>Wordbler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelectPlayers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectPlayers.Designer.cs">
+      <DependentUpon>SelectPlayers.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisplayScoreDetails.resx">
+      <DependentUpon>DisplayScoreDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WildCardChooser.resx">
+      <DependentUpon>WildCardChooser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wordbler.resx">
+      <DependentUpon>Wordbler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectPlayers.resx">
+      <DependentUpon>SelectPlayers.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\f44be9c4c703b48837ec1fedd3fbef75.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Agnes.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Bolt.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Gru.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\PoP.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Mario.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Donald.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Micky.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\TomJerry.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Eagle.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rockstar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\ScrabbleBag.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\GreenButtonWithText.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\BagTransparent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\GreenButtonWithTextTransparent.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Firecrackers.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Agnes_transparent_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bolt_transparent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Yoda_transparent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Zootopia.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Boo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Jade.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UpRussel_transparent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Prince_transparent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TomAndJerry_transparent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sherman_transparent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MarioMan_transparent1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Board.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Carl_transparent1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GreenBeret_transparent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Assasin_Transparent.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
